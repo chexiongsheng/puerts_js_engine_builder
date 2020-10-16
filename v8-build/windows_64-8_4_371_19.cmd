@@ -25,7 +25,7 @@ call gclient sync
 
 
 echo =====[ Building V8 ]=====
-call python .\tools\dev\v8gen.py x64.release
+call python .\tools\dev\v8gen.py x64.release -vv -- target_os="""win""" 
 copy ..\..\v8-build\args_win64_8_4_371_19.gn .\out.gn\x64.release\args.gn
 
 call ninja -C out.gn\x64.release -t clean
