@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run build script
       run: |
-        chmod + x ./v8-build/android_armv8-8_4_371_19.sh
+        chmod +x ./v8-build/android_armv8-8_4_371_19.sh
         sh ./v8-build/android_armv8-8_4_371_19.sh
     - uses: actions/upload-artifact@v2
       with:
@@ -29,7 +29,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run build script
       run: |
-        chmod + x ./v8-build/android_armv7-8_4_371_19.sh
+        chmod +x ./v8-build/android_armv7-8_4_371_19.sh
         sh ./v8-build/android_armv7-8_4_371_19.sh
     - uses: actions/upload-artifact@v2
       with:
