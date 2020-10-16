@@ -1,0 +1,54 @@
+name: Build V8
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+    - 'v8-build/**'
+    - '.github/workflows/build_v8.yml'
+
+jobs:
+  build_android_arm_v8:
+    name: Android (arm64-v8a)
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run build script
+      run: |
+        chmod + x ./v8-build/android_armv8-8_4_371_19.sh
+        sh ./v8-build/android_armv8-8_4_371_19.sh
+    - uses: actions/upload-artifact@v2
+      with:
+        name: android_arm64-v8a
+        path: '~/v8/v8/out.gn/arm64.release/libwee8.a'
+
+  build_android_arm_v7:
+    name: Android (armeabi-v7a)
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run build script
+      run: |
+        chmod + x ./v8-build/android_armv7-8_4_371_19.sh
+        sh ./v8-build/android_armv7-8_4_371_19.sh
+    - uses: actions/upload-artifact@v2
+      with:
+        name: android_armeabi-v7a
+        path: '~/v8/v8/out.gn/arm.release/libwee8.a'
+
+  build_windows:
+    name: Windows
+    runs-on: windows-2019
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run build script
+      shell: cmd
+      run: |
+        call .\v8-build\windows_64-8_4_371_19.cmd
+    - uses: actions/upload-artifact@v2
+      with:
+        name: windows
+        path: |
+          v8/v8/out.gn/x64.release/*.dll
+          v8/v8/out.gn/x64.release/*.lib
+
