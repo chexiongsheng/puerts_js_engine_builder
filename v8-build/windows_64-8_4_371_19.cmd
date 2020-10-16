@@ -25,7 +25,7 @@ call gclient sync
 
 
 echo =====[ Building V8 ]=====
-call python .\tools\dev\v8gen.py x64.release -vv --args='target_cpu="x64" v8_use_external_startup_data=true v8_enable_i18n_support=false is_debug=false v8_static_library=true is_clang=false strip_debug_info=true symbol_level=0 v8_enable_pointer_compression=false'
+call python .\tools\dev\v8gen.py x64.release -vv -- target_os="""win""" is_component_build=true use_custom_libcxx=false is_clang=false use_lld=false v8_enable_i18n_support=false v8_use_snapshot=false v8_use_external_startup_data=false symbol_level=0
 
 call ninja -C out.gn\x64.release -t clean
 call ninja -C out.gn\x64.release v8
