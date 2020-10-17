@@ -53,4 +53,19 @@ jobs:
         name: windows
         path: |
           v8/v8/out.gn/x64.release/**/*.lib
+          
+  build_macos:
+    name: macOS
+    runs-on: macos-10.15
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run build script
+      run: |
+        cd $GITHUB_WORKSPACE
+        chmod +x ./v8-build/macos-8_4_371_19.sh
+        sh ./v8-build/macos-8_4_371_19.sh
+    - uses: actions/upload-artifact@v2
+      with:
+        name: macos
+        path: '~/v8/v8/out.gn/x64.release/**/*.a'
 
