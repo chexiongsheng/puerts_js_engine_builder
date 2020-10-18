@@ -19,6 +19,7 @@ gclient sync
 echo "=====[ Building V8 ]====="
 python ./tools/dev/v8gen.py x64.release -vv -- '
 target_os = "ios"
+target_cpu = "arm64"
 enable_ios_bitcode = true
 ios_deployment_target = 10
 is_component_build = false
