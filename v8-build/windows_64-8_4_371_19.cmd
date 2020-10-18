@@ -11,12 +11,14 @@ mkdir v8
 cd v8
 
 echo =====[ Fetching V8 ]=====
-call fetch --nohooks v8
+call fetch v8
 cd v8
-call git checkout 8.4.371.19
 
-echo =====[ Sync V8 ]=====
-call git restore v8/test/test262/data/*
+echo =====[ Sync master ]=====
+call gclient sync
+
+call git checkout 8.4.371.19
+echo =====[ Sync 8.4.371.19 ]=====
 call gclient sync --verbose
 
 
