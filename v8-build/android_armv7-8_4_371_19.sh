@@ -53,5 +53,4 @@ use_custom_libcxx=false
 use_custom_libcxx_for_host=true
 '
 ninja -C out.gn/arm.release -t clean
-ninja -C out.gn/arm.release v8_libplatform
-ninja -C out.gn/arm.release v8
+ninja -C out.gn/arm.release

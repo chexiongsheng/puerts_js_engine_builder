@@ -53,5 +53,4 @@ use_custom_libcxx_for_host=true
 v8_enable_pointer_compression=false
 '
 ninja -C out.gn/arm64.release -t clean
-ninja -C out.gn/arm64.release v8_libplatform
-ninja -C out.gn/arm64.release v8
+ninja -C out.gn/arm64.release
