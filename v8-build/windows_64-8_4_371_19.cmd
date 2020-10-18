@@ -14,7 +14,8 @@ echo =====[ Fetching V8 ]=====
 call fetch v8
 cd v8
 
-echo =====[ Sync master ]=====
+call git checkout 8.6.395.13
+echo =====[ Sync 8.6.395.13 ]=====
 call gclient sync
 
 call git checkout 8.4.371.19
