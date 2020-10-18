@@ -37,4 +37,4 @@ v8_monolithic = true
 v8_use_external_startup_data = false
 '
 ninja -C out.gn/x64.release -t clean
-ninja -C out.gn/x64.release v8
+ninja -C out.gn/x64.release wee8

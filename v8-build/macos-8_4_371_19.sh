@@ -36,4 +36,4 @@ strip_debug_info = false
 symbol_level=1
 '
 ninja -C out.gn/x64.release -t clean
-ninja -C out.gn/x64.release v8
+ninja -C out.gn/x64.release wee8

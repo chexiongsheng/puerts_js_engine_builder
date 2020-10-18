@@ -31,4 +31,4 @@ echo =====[ Echo args.gn ]=====
 type out.gn\x64.release\args.gn
 
 call ninja -C out.gn\x64.release -t clean
-call ninja -C out.gn\x64.release v8
+call ninja -C out.gn\x64.release wee8
