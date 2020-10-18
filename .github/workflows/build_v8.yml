@@ -50,7 +50,7 @@ jobs:
       with:
         name: windows
         path: |
-          v8/v8/out.gn/x64.release/**/*.lib
+          v8/v8/out.gn/x64.release/**/wee8.lib
           
   build_macos:
     name: macOS
