@@ -15,6 +15,7 @@ echo =====[ Fetching V8 ]=====
 call fetch v8
 cd v8
 call git checkout 8.4.371.19
+call git restore test\test262\data\*
 call gclient sync
 
 
