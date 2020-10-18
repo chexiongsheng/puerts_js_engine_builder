@@ -12,12 +12,10 @@ mkdir v8
 cd v8
 
 echo =====[ Fetching V8 ]=====
-call fetch --nohooks v8
+call fetch v8
 cd v8
-call git checkout 8.4.371.19
-call gclient sync --nohooks
-call python .\build\util\lastchange.py .\build\util\LASTCHANGE
-call python .\tools\clang\scripts\update.py
+call git checkout 8.6.395.13
+call gclient sync
 
 
 echo =====[ Building V8 ]=====
