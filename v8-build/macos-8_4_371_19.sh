@@ -1,10 +1,3 @@
-git config --global user.name "johnche"
-git config --global user.email "johnche@tencent.com"
-git config --global core.autocrlf false
-git config --global core.filemode false
-git config --global color.ui true
-
-
 cd ~
 echo "=====[ Getting Depot Tools ]====="	
 git clone -q https://chromium.googlesource.com/chromium/tools/depot_tools.git
