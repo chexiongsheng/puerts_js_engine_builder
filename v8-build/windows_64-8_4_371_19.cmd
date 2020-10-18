@@ -16,7 +16,7 @@ cd v8
 call git checkout 8.4.371.19
 
 echo =====[ Sync V8 ]=====
-call gclient sync
+call gclient sync --verbose
 
 
 echo =====[ Building V8 ]=====
