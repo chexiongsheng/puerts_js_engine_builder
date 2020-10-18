@@ -31,3 +31,4 @@ v8_use_external_startup_data = false
 '
 ninja -C out.gn/x64.release -t clean
 ninja -C out.gn/x64.release wee8
+strip -S out.gn/x64.release/obj/libwee8.a
