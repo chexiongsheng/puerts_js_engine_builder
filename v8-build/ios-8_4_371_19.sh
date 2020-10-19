@@ -29,6 +29,7 @@ use_xcode_clang = true
 v8_enable_i18n_support = false 
 v8_monolithic = true
 v8_use_external_startup_data = false
+ios_enable_code_signing = false
 '
 ninja -C out.gn/x64.release -t clean
 ninja -C out.gn/x64.release wee8
