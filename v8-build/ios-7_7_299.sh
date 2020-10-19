@@ -31,5 +31,4 @@ target_cpu = "arm64"
 '
 ninja -C out.gn/arm64.release -t clean
 ninja -C out.gn/arm64.release
-#ninja -C out.gn/x64.release wee8
-#strip -S out.gn/x64.release/obj/libwee8.a
+strip -S out.gn/arm64.release/obj/*.a
