@@ -19,7 +19,7 @@ gclient sync
 
 
 echo "=====[ Building V8 ]====="
-python ./tools/dev/v8gen.py x64.release -vv -- '
+python ./tools/dev/v8gen.py arm64.release -vv -- '
 target_os = "ios"
 target_cpu = "arm64"
 enable_ios_bitcode = true
@@ -34,7 +34,7 @@ v8_use_external_startup_data = true
 v8_use_snapshot = true
 ios_enable_code_signing = false
 '
-ninja -C out.gn/x64.release -t clean
-ninja -C out.gn/x64.release
+ninja -C out.gn/arm64.release -t clean
+ninja -C out.gn/arm64.release
 #ninja -C out.gn/x64.release wee8
 #strip -S out.gn/x64.release/obj/libwee8.a
