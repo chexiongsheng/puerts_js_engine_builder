@@ -80,7 +80,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: ios
-        path: '~/v8/v8/out.gn/x64.release/**/libwee8.a'
+        path: '~/v8/v8/out.gn/arm64.release/**/libwee8.a'
         
   build_ios77299:
     name: iOS-77299
@@ -95,4 +95,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: ios77299
-        path: '~/v8/v8/out.gn/x64.release/**/*.a'
+        path: '~/v8/v8/out.gn/arm64.release/**/*.a'
