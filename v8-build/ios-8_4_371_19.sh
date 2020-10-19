@@ -20,19 +20,14 @@ gclient sync
 
 echo "=====[ Building V8 ]====="
 python ./tools/dev/v8gen.py arm64.release -vv -- '
-target_os = "ios"
-target_cpu = "arm64"
-enable_ios_bitcode = true
-ios_deployment_target = 10
-is_component_build = false
-is_debug = false
-use_custom_libcxx = false 
-use_xcode_clang = true
-v8_enable_i18n_support = false 
-v8_monolithic = true
 v8_use_external_startup_data = true
 v8_use_snapshot = true
+v8_enable_i18n_support = false
+is_debug = false
+v8_static_library = true
 ios_enable_code_signing = false
+target_os = "ios"
+target_cpu = "arm64"
 '
 ninja -C out.gn/arm64.release -t clean
 ninja -C out.gn/arm64.release
