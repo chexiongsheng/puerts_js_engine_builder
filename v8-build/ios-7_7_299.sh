@@ -14,7 +14,7 @@ echo "=====[ Fetching V8 ]====="
 fetch v8
 echo "target_os = ['ios']" >> .gclient
 cd ~/v8/v8
-git checkout refs/tags/8.4.371.19
+git checkout refs/tags/7.7.299
 gclient sync
 
 
@@ -30,5 +30,6 @@ target_os = "ios"
 target_cpu = "arm64"
 '
 ninja -C out.gn/arm64.release -t clean
-ninja -C out.gn/x64.release wee8
-strip -S out.gn/x64.release/obj/libwee8.a
+ninja -C out.gn/arm64.release
+#ninja -C out.gn/x64.release wee8
+#strip -S out.gn/x64.release/obj/libwee8.a

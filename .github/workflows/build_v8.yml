@@ -69,7 +69,7 @@ jobs:
 
   build_ios:
     name: iOS
-    runs-on: macos-latest
+    runs-on: macos-10.15
     steps:
     - uses: actions/checkout@v2
     - name: Run build script
@@ -81,3 +81,18 @@ jobs:
       with:
         name: ios
         path: '~/v8/v8/out.gn/x64.release/**/libwee8.a'
+        
+  build_ios:
+    name: iOS-77299
+    runs-on: macos-10.15
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run build script
+      run: |
+        cd $GITHUB_WORKSPACE
+        chmod +x ./v8-build/ios-7_7_299.sh
+        sh ./v8-build/ios-7_7_299.sh
+    - uses: actions/upload-artifact@v2
+      with:
+        name: ios77299
+        path: '~/v8/v8/out.gn/x64.release/**/*.a'
