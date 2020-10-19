@@ -1,3 +1,5 @@
+xcrun security find-identity -v -p codesigning
+
 cd ~
 echo "=====[ Getting Depot Tools ]====="	
 git clone -q https://chromium.googlesource.com/chromium/tools/depot_tools.git
