@@ -82,7 +82,7 @@ jobs:
         name: ios
         path: '~/v8/v8/out.gn/x64.release/**/libwee8.a'
         
-  build_ios:
+  build_ios77299:
     name: iOS-77299
     runs-on: macos-10.15
     steps:
