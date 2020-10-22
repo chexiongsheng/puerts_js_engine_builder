@@ -28,3 +28,5 @@ call gn gen out.gn\x64.release -args="target_os=""win"" target_cpu=""x64"" v8_us
 
 call ninja -C out.gn\x64.release -t clean
 call ninja -C out.gn\x64.release wee8
+
+node %~dp0\genBlobHeader.js "window x64" out.gn\x64.release\snapshot_blob.bin

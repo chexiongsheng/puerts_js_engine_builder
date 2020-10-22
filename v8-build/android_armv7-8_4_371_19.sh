@@ -48,3 +48,6 @@ use_custom_libcxx_for_host=true
 ninja -C out.gn/arm.release -t clean
 ninja -C out.gn/arm.release wee8
 third_party/android_ndk/toolchains/arm-linux-androideabi-4.9/prebuilt/linux-x86_64/arm-linux-androideabi/bin/strip -g -S -d --strip-debug --verbose out.gn/arm.release/obj/libwee8.a
+
+SCRIPT_FOLDER=$(cd "$(dirname "$0")";pwd)
+node $SCRIPT_FOLDER/genBlobHeader.js "android armv7" out.gn/arm.release/snapshot_blob.bin

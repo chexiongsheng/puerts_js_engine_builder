@@ -15,12 +15,14 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run build script
       run: |
-        chmod +x ./v8-build/android_armv8-8_4_371_19.sh
+        cd $GITHUB_WORKSPACE
         sh ./v8-build/android_armv8-8_4_371_19.sh
     - uses: actions/upload-artifact@v2
       with:
         name: android_arm64-v8a
-        path: '~/v8/v8/out.gn/arm64.release/**/libwee8.a'
+        path: |
+          ~/v8/v8/out.gn/arm64.release/**/libwee8.a
+          ~/v8/v8/*.h
 
   build_android_arm_v7:
     name: Android (armeabi-v7a)
@@ -29,12 +31,14 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run build script
       run: |
-        chmod +x ./v8-build/android_armv7-8_4_371_19.sh
+        cd $GITHUB_WORKSPACE
         sh ./v8-build/android_armv7-8_4_371_19.sh
     - uses: actions/upload-artifact@v2
       with:
         name: android_armeabi-v7a
-        path: '~/v8/v8/out.gn/arm.release/**/libwee8.a'
+        path: |
+          ~/v8/v8/out.gn/arm.release/**/libwee8.a
+          ~/v8/v8/*.h
 
   build_windows:
     name: Windows
@@ -51,6 +55,7 @@ jobs:
         name: windows
         path: |
           v8/v8/out.gn/x64.release/**/wee8.lib
+          v8/v8/*.h
           
   build_macos:
     name: macOS
@@ -60,12 +65,13 @@ jobs:
     - name: Run build script
       run: |
         cd $GITHUB_WORKSPACE
-        chmod +x ./v8-build/macos-8_4_371_19.sh
         sh ./v8-build/macos-8_4_371_19.sh
     - uses: actions/upload-artifact@v2
       with:
         name: macos
-        path: '~/v8/v8/out.gn/x64.release/**/libwee8.a'
+        path: |
+          ~/v8/v8/out.gn/x64.release/**/libwee8.a
+          ~/v8/v8/*.h
 
   build_ios:
     name: iOS
@@ -75,12 +81,13 @@ jobs:
     - name: Run build script
       run: |
         cd $GITHUB_WORKSPACE
-        chmod +x ./v8-build/ios-8_4_371_19.sh
         sh ./v8-build/ios-8_4_371_19.sh
     - uses: actions/upload-artifact@v2
       with:
         name: ios
-        path: '~/v8/v8/out.gn/arm64.release/**/libwee8.a'
+        path: |
+          ~/v8/v8/out.gn/arm64.release/**/libwee8.a
+          ~/v8/v8/*.h
         
   build_ios77299:
     name: iOS-77299
@@ -90,9 +97,10 @@ jobs:
     - name: Run build script
       run: |
         cd $GITHUB_WORKSPACE
-        chmod +x ./v8-build/ios-7_7_299.sh
         sh ./v8-build/ios-7_7_299.sh
     - uses: actions/upload-artifact@v2
       with:
         name: ios77299
-        path: '~/v8/v8/out.gn/arm64.release/**/libwee8.a'
+        path: |
+          ~/v8/v8/out.gn/arm64.release/**/libwee8.a
+          ~/v8/v8/*.h

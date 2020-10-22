@@ -32,3 +32,6 @@ target_cpu = "arm64"
 ninja -C out.gn/arm64.release -t clean
 ninja -C out.gn/arm64.release wee8
 strip -S out.gn/arm64.release/obj/libwee8.a
+
+SCRIPT_FOLDER=$(cd "$(dirname "$0")";pwd)
+node $SCRIPT_FOLDER/genBlobHeader.js "ios arm64" out.gn/arm64.release/snapshot_blob.bin
