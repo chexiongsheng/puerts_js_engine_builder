@@ -29,7 +29,7 @@ echo =====[ Building V8 ]=====
 call gn gen out.gn\x64.release -args="target_os=""win"" target_cpu=""x64"" v8_enable_i18n_support=false is_debug=false v8_static_library=true is_clang=false v8_enable_verify_heap=true dcheck_always_on=true"
 
 call ninja -C out.gn\x64.release -t clean
-call ninja -C out.gn\x64.release wee8
+call ninja -C out.gn\x64.release
 
 node %~dp0\genBlobHeader.js "window x64" out.gn\x64.release\snapshot_blob.bin
 node %~dp0\genBlobHeader.js "window x64" out.gn\x64.release\natives_blob.bin
