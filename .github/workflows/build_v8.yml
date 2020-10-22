@@ -57,6 +57,23 @@ jobs:
           v8/v8/out.gn/x64.release/**/wee8.lib
           v8/v8/*.h
           
+  build_windows_77_debug:
+    name: Windows-77-debug
+    runs-on: windows-2019
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run build script
+      shell: cmd
+      run: |
+        cd %GITHUB_WORKSPACE%
+        call .\v8-build\windows_64-7_7_299_Debug.cmd
+    - uses: actions/upload-artifact@v2
+      with:
+        name: windows
+        path: |
+          v8/v8/out.gn/x64.release/**/*.lib
+          v8/v8/*.h
+          
   build_macos:
     name: macOS
     runs-on: macos-10.15
@@ -89,7 +106,7 @@ jobs:
           ~/v8/v8/out.gn/arm64.release/**/libwee8.a
           ~/v8/v8/*.h
         
-  build_ios77299:
+  build_ios_77299:
     name: iOS-77299
     runs-on: macos-10.15
     steps:
