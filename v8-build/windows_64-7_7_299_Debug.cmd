@@ -13,7 +13,7 @@ cd v8
 echo =====[ Fetching V8 ]=====
 call fetch v8
 cd v8
-call git checkout refs/tags/8.4.371.19
+call git checkout refs/tags/7.7.299
 cd test\test262\data
 call git config --system core.longpaths true
 call git restore *
