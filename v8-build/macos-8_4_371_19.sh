@@ -31,5 +31,4 @@ symbol_level=1
 ninja -C out.gn/x64.release -t clean
 ninja -C out.gn/x64.release wee8
 
-SCRIPT_FOLDER=$(cd "$(dirname "$0")";pwd)
-node $SCRIPT_FOLDER/genBlobHeader.js "osx 64" out.gn/x64.release/snapshot_blob.bin
+node $GITHUB_WORKSPACE/v8-build/genBlobHeader.js "osx 64" out.gn/x64.release/snapshot_blob.bin
