@@ -69,7 +69,7 @@ jobs:
         call .\v8-build\windows_64-7_7_299_Debug.cmd
     - uses: actions/upload-artifact@v2
       with:
-        name: windows
+        name: windows_77_debug
         path: |
           v8/v8/out.gn/x64.release/**/*.lib
           v8/v8/*.h
