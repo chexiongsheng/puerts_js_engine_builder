@@ -57,6 +57,23 @@ jobs:
           v8/v8/out.gn/x64.release/**/wee8.lib
           v8/v8/*.h
           
+  build_windows_static_crt:
+    name: Windows_static_crt
+    runs-on: windows-2019
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run build script
+      shell: cmd
+      run: |
+        cd %GITHUB_WORKSPACE%
+        call .\v8-build\windows_64-8_4_371_19_static_crt.cmd
+    - uses: actions/upload-artifact@v2
+      with:
+        name: windows_static_crt
+        path: |
+          v8/v8/out.gn/x64.release/**/wee8.lib
+          v8/v8/*.h
+          
   build_windows_77_debug:
     name: Windows-77-debug
     runs-on: windows-2016
