@@ -28,7 +28,7 @@ echo =====[ Building V8 ]=====
 call gn gen out.gn\x64.release -args="v8_use_external_startup_data=true v8_use_snapshot=true v8_enable_i18n_support=false is_debug=false v8_static_library=true is_clang=false"
 
 call ninja -C out.gn\x64.release -t clean
-call ninja -C out.gn\x64.release wee8
+call ninja -C out.gn\x64.release v8 v8_libbase v8_libplatform v8_libsampler
 
 node %~dp0\genBlobHeader.js "window x64" out.gn\x64.release\snapshot_blob.bin
 node %~dp0\genBlobHeader.js "window x64" out.gn\x64.release\natives_blob.bin
